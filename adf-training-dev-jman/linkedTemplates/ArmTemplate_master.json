@@ -1,0 +1,105 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-training-dev-jman"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"LS_blobToAzureSQLdb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_blobToAzureSQLdb'"
+		},
+		"LS_training_blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_training_blob'"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqltestservertraining.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldb-training"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "CloudSA3a9191aa"
+		},
+		"LS_blobToAzureSQLdb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqltestservertraining.database.windows.net"
+		},
+		"LS_blobToAzureSQLdb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldb-training"
+		},
+		"LS_blobToAzureSQLdb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "CloudSA3a9191aa"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-training-dev-jman_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"LS_blobToAzureSQLdb_password": {
+						"value": "[parameters('LS_blobToAzureSQLdb_password')]"
+					},
+					"LS_training_blob_connectionString": {
+						"value": "[parameters('LS_training_blob_connectionString')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"LS_blobToAzureSQLdb_properties_typeProperties_server": {
+						"value": "[parameters('LS_blobToAzureSQLdb_properties_typeProperties_server')]"
+					},
+					"LS_blobToAzureSQLdb_properties_typeProperties_database": {
+						"value": "[parameters('LS_blobToAzureSQLdb_properties_typeProperties_database')]"
+					},
+					"LS_blobToAzureSQLdb_properties_typeProperties_userName": {
+						"value": "[parameters('LS_blobToAzureSQLdb_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

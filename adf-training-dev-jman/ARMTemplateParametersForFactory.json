@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-training-dev-jman"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"LS_blobToAzureSQLdb_password": {
+			"value": ""
+		},
+		"LS_training_blob_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "sqltestservertraining.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "sqldb-training"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "CloudSA3a9191aa"
+		},
+		"LS_blobToAzureSQLdb_properties_typeProperties_server": {
+			"value": "sqltestservertraining.database.windows.net"
+		},
+		"LS_blobToAzureSQLdb_properties_typeProperties_database": {
+			"value": "sqldb-training"
+		},
+		"LS_blobToAzureSQLdb_properties_typeProperties_userName": {
+			"value": "CloudSA3a9191aa"
+		}
+	}
+}
