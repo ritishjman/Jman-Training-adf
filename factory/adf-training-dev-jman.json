@@ -1,0 +1,9 @@
+{
+	"name": "adf-training-dev-jman",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e89d06dd-3c5d-4b81-8bb5-ff284ef2f856",
+		"tenantId": "2800c0a0-70e9-49be-8733-faeaa6aced99"
+	}
+}
