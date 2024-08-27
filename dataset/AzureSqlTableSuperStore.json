@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlTableSuperStore",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "raw",
+			"table": "Superstore"
+		}
+	}
+}
