@@ -1,0 +1,23 @@
+{
+	"name": "csvOrdersMerged",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_training_blob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "order",
+				"container": "consolidated-assessment"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
