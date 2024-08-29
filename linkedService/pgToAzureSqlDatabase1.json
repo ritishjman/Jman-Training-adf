@@ -1,0 +1,22 @@
+{
+	"name": "pgToAzureSqlDatabase1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "destination dataset for loading data into azure sql from pg sql",
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sqltestservertraining.database.windows.net",
+			"database": "sqldb-training2",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "CloudSA3a9191aa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiYTExODFmZS02ZGUzLTQ0YjctODQ1YS00MGJmOWJjYjkyNDUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
